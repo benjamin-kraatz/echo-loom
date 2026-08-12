@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+
+# fetched by npm run fetch-assets
+public/hdri/*.hdr

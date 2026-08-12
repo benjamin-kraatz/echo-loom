@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0a0618" />
+    <title>Echo Loom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="ui-root">
+        <section id="title-screen" class="screen active">
+          <div class="title-glow"></div>
+          <h1 class="game-title">Echo Loom</h1>
+          <p class="tagline">Weave light through the cathedral of glass</p>
+          <button id="btn-start" class="btn-primary" type="button">Begin</button>
+          <p class="hint-muted">Tap to cast · Hold &amp; drag to bend</p>
+          <p id="safari-tip" class="safari-tip hidden" role="note">
+            For full screen, open in Safari
+            <span aria-hidden="true">·</span> ⋯ → Open in Browser
+            <button type="button" id="safari-tip-dismiss" aria-label="Dismiss">✕</button>
+          </p>
+        </section>
+
+        <section id="hud" class="hud hidden">
+          <div class="hud-top">
+            <div class="room-label" id="room-label">Chamber I</div>
+            <div class="star-count" id="star-count">
+              <span class="star-icon">✦</span>
+              <span id="stars-awake">0</span>/<span id="stars-total">0</span>
+            </div>
+          </div>
+          <div id="touch-hint" class="touch-hint hidden">
+            Tap to cast a pulse · Hold &amp; drag to curve the beam
+          </div>
+        </section>
+
+        <section id="level-banner" class="banner hidden" aria-live="polite">
+          <div class="banner-inner">
+            <p class="banner-kicker" id="banner-kicker">Awakened</p>
+            <h2 class="banner-title" id="banner-title">Chamber Cleared</h2>
+          </div>
+        </section>
+
+        <section id="win-screen" class="screen hidden">
+          <div class="title-glow soft"></div>
+          <h1 class="game-title smaller">The Loom Hums</h1>
+          <p class="tagline">All constellations awaken. The cathedral remembers light.</p>
+          <button id="btn-again" class="btn-primary" type="button">Weave Again</button>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
